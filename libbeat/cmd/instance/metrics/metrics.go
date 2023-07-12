@@ -134,7 +134,6 @@ func getRSSSize() (uint64, error) {
 	}
 	return rss, nil
 }
-
 func getBeatProcessState() (common.MapStr, error) {
 	pid, err := process.GetSelfPid()
 	if err != nil {
@@ -142,7 +141,9 @@ func getBeatProcessState() (common.MapStr, error) {
 	}
 
 	state, err := beatProcessStats.GetOne(pid)
+	fmt.Println("==================")
 	if err != nil {
+		fmt.Println("get one")
 		return nil, fmt.Errorf("error retrieving process stats: %v", err)
 	}
 

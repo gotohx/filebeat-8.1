@@ -18,6 +18,8 @@
 package inputs
 
 import (
+	"fmt"
+
 	"github.com/elastic/beats/v7/filebeat/beater"
 	"github.com/elastic/beats/v7/filebeat/input/filestream"
 	"github.com/elastic/beats/v7/filebeat/input/kafka"
@@ -28,6 +30,7 @@ import (
 )
 
 func Init(info beat.Info, log *logp.Logger, components beater.StateStore) []v2.Plugin {
+	fmt.Println("Init filebeat")
 	return append(
 		genericInputs(log, components),
 		osInputs(info, log, components)...,

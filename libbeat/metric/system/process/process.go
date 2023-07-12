@@ -525,7 +525,7 @@ func (procStats *Stats) GetOne(pid int) (common.MapStr, error) {
 	return e, nil
 }
 
-func (procStats *Stats) getSingleProcess(pid int, newProcs ProcsMap) *Process {
+func (procStats *Stats)  getSingleProcess(pid int, newProcs ProcsMap) *Process {
 	var cmdline string
 	var env common.MapStr
 	// In the future we really should find a better way of distinguishing between serious and non-serious errors

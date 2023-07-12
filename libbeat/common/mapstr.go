@@ -172,7 +172,8 @@ func (m MapStr) HasKey(key string) (bool, error) {
 // GetValue gets a value from the map. If the key does not exist then an error
 // is returned.
 func (m MapStr) GetValue(key string) (interface{}, error) {
-	_, _, v, found, err := mapFind(key, m, false)
+	// _, _, v, found, err := mapFind(key, m, false)
+	_, _, v, found, err := mapFind(key, m, true)
 	if err != nil {
 		return nil, err
 	}

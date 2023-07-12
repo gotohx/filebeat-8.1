@@ -131,10 +131,17 @@ setup.kibana:
 
 # Configure what output to use when sending the data collected by the beat.
 
+output.console:
+  # Boolean flag to enable or disable the output module.
+  enabled: true
+  pretty: true
+
+
 # ---------------------------- Elasticsearch Output ----------------------------
-output.elasticsearch:
-  # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
+# output.elasticsearch:
+#   enable: false
+#   # Array of hosts to connect to.
+#   hosts: ["localhost:9200"]
 
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"
@@ -158,6 +165,8 @@ output.elasticsearch:
 
   # Client Certificate Key
   #ssl.key: "/etc/pki/client/cert.key"
+
+# output.
 
 # ================================= Processors =================================
 processors:

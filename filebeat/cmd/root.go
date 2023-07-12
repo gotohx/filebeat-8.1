@@ -19,6 +19,7 @@ package cmd
 
 import (
 	"flag"
+	"fmt"
 
 	"github.com/spf13/pflag"
 
@@ -51,6 +52,7 @@ func FilebeatSettings() instance.Settings {
 
 // Filebeat build the beat root command for executing filebeat and it's subcommands.
 func Filebeat(inputs beater.PluginFactory, settings instance.Settings) *cmd.BeatsRootCmd {
+	fmt.Printf("%+v \n", settings)
 	command := cmd.GenRootCmdWithSettings(beater.New(inputs), settings)
 	command.PersistentFlags().AddGoFlag(flag.CommandLine.Lookup("M"))
 	command.TestCmd.Flags().AddGoFlag(flag.CommandLine.Lookup("modules"))

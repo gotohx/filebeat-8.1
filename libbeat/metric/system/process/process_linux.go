@@ -18,6 +18,7 @@
 package process
 
 import (
+	"fmt"
 	"os"
 	"path"
 	"strconv"
@@ -28,7 +29,7 @@ import (
 // GetSelfPid returns the PID for this process
 func GetSelfPid() (int, error) {
 	pid, err := os.Readlink(path.Join(gosigar.Procd, "self"))
-
+	fmt.Println("pid:", pid)
 	if err != nil {
 		return 0, err
 	}
